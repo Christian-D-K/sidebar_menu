@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react"
+import { Flex } from '@chakra-ui/react'
 
 const MenuFooter = () => {
   return (
@@ -8,4 +8,4 @@ const MenuFooter = () => {
   )
 }
 
-export default MenuFooter;
+export default MenuFooter

@@ -1,6 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Sidebar from './Sidebar';
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import Sidebar from './Sidebar'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -10,15 +10,15 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Sidebar>;
+} as ComponentMeta<typeof Sidebar>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar />;
+const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar />
 
 // args渡したくなったらこっち↓
 // const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 // Primary.args = {
 //   primary: true,
 //   label: 'Button',
