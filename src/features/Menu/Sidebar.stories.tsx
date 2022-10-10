@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar />
 // args渡したくなったらこっち↓
 // const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
 
-export const Primary = Template.bind({})
+export const Open = Template.bind({})
 // Primary.args = {
 //   primary: true,
 //   label: 'Button',

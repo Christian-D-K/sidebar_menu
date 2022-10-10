@@ -4,7 +4,7 @@ const MenuHeader = () => {
   return (
     <Flex h={50} pos='relative'>
       <Flex flexGrow={1} bg='green'>
-        <Text ml={20} my={12}>
+        <Text ml={5} my={3}>
           Header
         </Text>
       </Flex>
