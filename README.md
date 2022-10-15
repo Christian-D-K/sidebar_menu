@@ -1,8 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 起動方法
 
-## Getting Started
-
-First, run the development server:
+### Dev 環境
 
 ```bash
 npm run dev
@@ -10,25 +8,115 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Storybook
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run storybook
+# or
+yarn storybook
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## リポジトリルール
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### ブランチ名
 
-## Learn More
+基本的に以下の形式
 
-To learn more about Next.js, take a look at the following resources:
+```
+{修正ステータス}/{機能名}-{２桁の番号}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 修正ステータスとは?
+  機能作成：create
+  機能追加：add
+  機能修正・バグフィックス：fix
+  機能削除：delete
+  その他：other
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### 例
 
-## Deploy on Vercel
+- 機能や画面の新規作成
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+create/holloWorld-01
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 既に作成された機能に機能を追加。またはブラッシュアップ
+
+```
+add/holloWorld-01
+```
+
+- 既存の機能にバグが見つかった！
+
+```
+fix/holloWorld-01
+```
+
+- 機能の削除
+
+```
+delete/holloWorld-01
+```
+
+- 上記に該当しないもの
+
+```
+other/holloWorld-01
+```
+
+## コミットルール
+
+### プルリクエスト
+
+#### プルリクエスト名
+
+```
+【{修正ステータス}】{機能名}-{２桁の番号} {簡単な実装の説明}
+```
+
+##### 例
+
+```
+【create】helloWorld-01 Hello World画面
+```
+
+```
+【add】helloWorld-01 ボタンの押下でアラートに出力する
+```
+
+```
+【fix】helloWorld-01 文字列がおかしくなっていたため修正
+```
+
+#### プルリクエスト説明
+
+以下を貼り付け編集
+
+```
+# 新規作成:seedling:
+# 機能追加:sparkles:
+# バグフィックス:bug:
+# 機能削除:boom:
+# リファクタリング:construction_worker:
+# その他:zap:
+↑この文と該当の項目以外は削除！↑
+
+## 概要:page_facing_up:
+- blah blah blah...
+- etc...
+
+## モチベーション:fire:
+- blah blah blah...
+- etc...
+
+## 実装:wrench:
+- blah blah blah...
+- etc...
+
+## 懸念点:pushpin:
+- 特になし
+
+## 備考:pencil2:
+- 特になし
+```
