@@ -1,4 +1,4 @@
-## 起動方法
+## 起動方法:rocket:
 
 ### Dev 環境
 
@@ -16,7 +16,7 @@ npm run storybook
 yarn storybook
 ```
 
-## リポジトリルール
+## リポジトリルール:busts_in_silhouette:
 
 ### ブランチ名
 
