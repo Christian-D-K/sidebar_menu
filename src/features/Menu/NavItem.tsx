@@ -18,7 +18,7 @@ const NavItem = ({ id }: navItemType) => {
         flexFlow='column'
         fontSize='lg'
         fontWeight='bold'
-        color='gray.300'
+        color='gray.200'
       >
         <ListIcon
           mx={15}
