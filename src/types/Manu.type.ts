@@ -1,6 +1,8 @@
+import { IconType } from 'react-icons'
 export type navItemType = {
   id: string
   path?: string
+  icon?: IconType
   name?: string
   childMenuContents?: childMenuContentsType[]
 }

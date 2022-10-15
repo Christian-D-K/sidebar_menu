@@ -1,24 +1,32 @@
-import { Text, Center, Flex } from '@chakra-ui/react'
+import { Text, Center, Flex, Icon } from '@chakra-ui/react'
+import { FiSidebar } from 'react-icons/fi'
 
 const MenuHeader = () => {
   return (
-    <Flex h={50} pos='relative'>
-      <Flex flexGrow={1} bg='green'>
-        <Text ml={5} my={3}>
-          Header
+    <Flex h='60px' pos='relative'>
+      <Flex flexGrow={1}>
+        <Text
+          ml={5}
+          my={2}
+          py={1}
+          fontSize='2xl'
+          fontWeight='bold'
+          color='gray.200'
+        >
+          Dinosaur
         </Text>
       </Flex>
       <Flex
-        w='35px'
-        h='35px'
+        w='50px'
+        h='50px'
         pos='absolute'
-        bg='gray'
+        bg='gray.100'
         borderLeftRadius={35}
         right={0}
         textAlign='center'
       >
         <Center>
-          <Text w={35}>X</Text>
+          <Icon w='50px' h='25px' strokeWidth='2px' as={FiSidebar} />
         </Center>
       </Flex>
     </Flex>
