@@ -34,20 +34,15 @@ const NavItem = ({ id }: navItemType) => {
         color='gray.200'
         cursor='pointer'
         flexFlow='row'
+        fontSize='lg'
+        transition={'300ms'}
         _hover={{ bg: 'gray.200', color: 'gray.700' }}
       >
-        <ListItem
-          my={15}
-          h={30}
-          flexGrow={1}
-          flexFlow='row'
-          fontSize='lg'
-          fontWeight='bold'
-        >
+        <ListItem my={15} h={30} flexGrow={1} flexFlow='row' fontWeight='bold'>
           <ListIcon
-            mx={15}
-            h={5}
-            w={5}
+            mx='25px'
+            h={6}
+            w={6}
             strokeWidth={2}
             as={navItemContens.icon}
           />
@@ -55,8 +50,13 @@ const NavItem = ({ id }: navItemType) => {
         </ListItem>
         {navItemContens.childMenuContents &&
           navItemContens.childMenuContents?.length > 0 &&
-          isSubMenuOpen && (
-            <Center w='70px' onClick={onClick}>
+          isMainMenuOpen && (
+            <Center
+              w='80px'
+              onClick={onClick}
+              transition={'300ms'}
+              _hover={{ bg: 'gray.500', color: 'gray.200' }}
+            >
               <Icon as={FiChevronDown} h={5} w={5} strokeWidth='3px' />
             </Center>
           )}
@@ -66,9 +66,7 @@ const NavItem = ({ id }: navItemType) => {
           flexGrow={1}
           flexFlow='column'
           bg='white'
-          bgGradient='linear(200deg, rgba(160, 160, 160, .5), rgba(250,250,250, .7) 40.71%),
-      linear-gradient(130deg, rgba(200, 200, 200, .4), rgba(250, 250, 250, .5) 80.71%),
-      linear-gradient(320deg, rgba(250, 250, 250, .5), rgba(150, 150, 150, .5) 60.71%),'
+          bgGradient='linear(230deg, rgba(120, 120, 120, .7), rgba(250,250,250, .6) 50%),'
         >
           <List>
             {navItemContens.childMenuContents &&

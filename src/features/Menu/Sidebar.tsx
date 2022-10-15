@@ -13,13 +13,14 @@ const Sidebar = () => {
   return (
     <Flex
       flexFlow='column'
-      w={isOpen ? '400px' : '50px'}
-      bgGradient='linear(200deg, rgba(95, 2, 67), rgba(17,11,79,.3) 70.71%),
-      linear-gradient(135deg, rgba(0,0,120,.8), rgba(0,255,0,0) 60.71%),
-      linear-gradient(330deg, rgba(4,0,33), rgba(0,0,0) 80.71%)'
+      flexShrink={0}
+      w={isOpen ? '400px' : '80px'}
+      // bgGradient='linear(200deg, rgba(95, 2, 67), rgba(17,11,79,.3) 70.71%),
+      // linear-gradient(135deg, rgba(0,0,120,.8), rgba(0,255,0,0) 60.71%),
+      // linear-gradient(330deg, rgba(4,0,33), rgba(0,0,0) 80.71%)'
+      bgGradient='linear(260deg, rgba(0, 0, 0), rgba(40,40,40,.9) 100.71%)'
       h='100vh'
       overflowY={isOpen ? 'scroll' : 'visible'}
-      pos='relative'
       sx={{
         '&::-webkit-scrollbar': {
           display: 'none',
