@@ -9,8 +9,8 @@ const MenuHeader = () => {
         </Text>
       </Flex>
       <Flex
-        w={35}
-        h={40}
+        w='35px'
+        h='35px'
         pos='absolute'
         bg='gray'
         borderLeftRadius={35}
