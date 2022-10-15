@@ -7,7 +7,7 @@ import NavItem from './NavItem'
 const Sidebar = () => {
   console.log(menuContents)
   return (
-    <Flex flexFlow='column' w='240px' bg='red' h='100vh'>
+    <Flex flexFlow='column' w='300px' bg='red' h='100vh'>
       <MenuHeader />
       <Flex flexGrow={1} flexFlow='column'>
         <List spacing={0} p={0} mt={0}>

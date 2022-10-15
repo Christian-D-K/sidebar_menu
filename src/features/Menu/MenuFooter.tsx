@@ -3,28 +3,38 @@ import {
   Avatar,
   Text,
   Center,
-  Box,
+  Icon,
   Stack,
   Button,
 } from '@chakra-ui/react'
-import { EmailIcon, ArrowForwardIcon } from '@chakra-ui/icons'
+import { FiLogOut, FiUser, FiChevronRight } from 'react-icons/fi'
 
 const MenuFooter = () => {
   return (
-    <Flex bg='blue' h={150} flexFlow='column'>
-      <Flex flexFlow='row'>
-        <Stack direction='row'>
-          <Avatar src='' name='a a' />
-        </Stack>
-        <Text fontSize='xs'>Chris D Kasahara</Text>
+    <Flex bg='blue' h={200} flexFlow='column' p={4}>
+      <Flex
+        flexFlow='row'
+        border='2px'
+        borderRadius='10px'
+        borderColor='white'
+        p={4}
+        mb={1}
+      >
         <Center>
-          <Box m={15}>{'>'}</Box>
+          <Avatar src='' name='Chris Kasahara' size='md' mr={2} />
+          <Text fontSize='lg' fontWeight='bold' color='white'>
+            Chris D Kasahara
+          </Text>
+          <Icon p={1} w={5} color='white' as={FiChevronRight} />
         </Center>
       </Flex>
       <Flex>
-        <Stack direction='row' spacing={4}>
-          <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal'>
-            Sign Out
+        <Stack direction='row' spacing={3} p={1}>
+          <Button size='sm' p={6} rightIcon={<FiLogOut />}>
+            SIGN OUT
+          </Button>
+          <Button size='sm' p={6} rightIcon={<FiUser />}>
+            SWITCH ACC
           </Button>
         </Stack>
       </Flex>
