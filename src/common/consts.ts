@@ -21,7 +21,56 @@ export const menuContents: menuContentsType = [
     path: '/',
     icon: FiBook,
     name: 'PICTURE BOOK',
-    childMenuContents: [],
+    childMenuContents: [
+      {
+        id: 'nekemf',
+        path: '/',
+        icon: 'none',
+        name: 'T-REX',
+      },
+      {
+        id: 'rfrgsg',
+        path: '/',
+        icon: 'none',
+        name: 'Pteranodon',
+      },
+      {
+        id: 'qqarfw',
+        path: '/',
+        icon: 'none',
+        name: 'Stegosaurus',
+      },
+      {
+        id: 'tdchdx',
+        path: '/',
+        icon: 'none',
+        name: 'Triceratops',
+      },
+      {
+        id: 'jrcsxs',
+        path: '/',
+        icon: 'none',
+        name: 'ParasauroLophus',
+      },
+      {
+        id: 'eedddw',
+        path: '/',
+        icon: 'none',
+        name: 'Spinosaurus',
+      },
+      {
+        id: 'ggegss',
+        path: '/',
+        icon: 'none',
+        name: 'Brachiosaurus',
+      },
+      {
+        id: 'eggfsg',
+        path: '/',
+        icon: 'none',
+        name: 'Plesiosaurus',
+      },
+    ],
   },
   {
     id: 'sebsfb',
