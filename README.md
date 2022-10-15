@@ -102,21 +102,21 @@ other/holloWorld-01
 # その他:zap:
 ↑この文と該当の項目以外は削除！↑
 
-# 概要:page_facing_up:
+## 概要:page_facing_up:
 - blah blah blah...
 - etc...
 
-# モチベーション:fire:
+## モチベーション:fire:
 - blah blah blah...
 - etc...
 
-# 実装:wrench:
+## 実装:wrench:
 - blah blah blah...
 - etc...
 
-# 懸念点:pushpin:
+## 懸念点:pushpin:
 - 特になし
 
-# 備考:pencil2:
+## 備考:pencil2:
 - 特になし
 ```
