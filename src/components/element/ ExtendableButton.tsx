@@ -18,12 +18,9 @@ const ExtendableButton = ({
       fontSize='md'
       transition={'400ms'}
       _hover={{ bg: 'gray.400', color: 'gray.800' }}
+      justifyContent='space-between'
     >
-      <Text
-        w={isExtend ? '100px' : '0px'}
-        transition={'800ms'}
-        overflow='hidden'
-      >
+      <Text overflow='hidden' flexGrow={1}>
         {isExtend && buttonText}
       </Text>
       {icon && (
