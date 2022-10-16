@@ -16,16 +16,15 @@ const ExtendableButton = ({
       h={height}
       onMouseEnter={onMouseEvent}
       fontSize='md'
-      transition={'400ms'}
+      transition={'800ms'}
       _hover={{ bg: 'gray.400', color: 'gray.800' }}
-      justifyContent='space-between'
     >
-      <Text overflow='hidden' flexGrow={1}>
-        {isExtend && buttonText}
-      </Text>
-      {icon && (
-        <Icon as={icon} h={5} w={5} ml={isExtend ? 3 : 0} transition={'100m'} />
+      {isExtend && (
+        <Text overflow='hidden' flexGrow={1}>
+          {isExtend && buttonText}
+        </Text>
       )}
+      {icon && <Icon as={icon} h={5} w={5} />}
     </Button>
   )
 }
