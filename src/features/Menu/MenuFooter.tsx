@@ -1,14 +1,6 @@
 import { useState } from 'react'
 import { useAtom } from 'jotai'
-import {
-  Flex,
-  Avatar,
-  Text,
-  Center,
-  Icon,
-  Stack,
-  Button,
-} from '@chakra-ui/react'
+import { Flex, Avatar, Text, Center, Stack } from '@chakra-ui/react'
 import { FiLogOut, FiUser } from 'react-icons/fi'
 import { menuOpeningStateAtom } from '../../atom/MenuAtom'
 import ExtendableButton from '../../components/element/ ExtendableButton'
@@ -18,7 +10,7 @@ const MenuFooter = () => {
   const { mainMenuState } = menuOpeningState
   const { isOpen } = mainMenuState
   return (
-    <Flex h={250} w='100%' flexFlow='column' p={isOpen ? 5 : 0}>
+    <Flex w='100%' flexFlow='column' p={isOpen ? 5 : 0}>
       {isOpen ? (
         <FooterContentsWhenMenuOpen />
       ) : (
@@ -36,33 +28,31 @@ const FooterContentsWhenMenuOpen = () => {
   }
 
   return (
-    <>
+    <Flex flexFlow='column' p={4} mb={1} flexGrow={1}>
       <Flex
-        flexFlow='row'
+        overflow='hidden'
         border='2px'
+        py={4}
         borderRadius='10px'
         borderColor='gray.200'
-        py={4}
-        pl={7}
-        mb={1}
         cursor='pointer'
         color='white'
-        transition={'1500ms'}
+        transition={'1000ms'}
         _hover={{ bg: 'gray.200', color: 'gray.700' }}
+        flexFlow='column'
+        alignItems='center'
       >
-        <Center flexFlow='column' flexGrow={1}>
-          <Avatar src='' name='Chris Kasahara' size='md' mr={2} />
-          <Text fontSize='lg' fontWeight='bold'>
-            Chris D Kasahara
-          </Text>
-        </Center>
+        <Avatar src='' name='Chris Kasahara' size='md' m={1} />
+        <Text fontSize='lg' fontWeight='bold' overflow='hidden' w='150px'>
+          Chris D Kasahara
+        </Text>
       </Flex>
       <Flex>
         <Stack direction='row' spacing={2} py={1}>
           <ExtendableButton
             buttonText='LOGOUT'
             isExtend={isLeftButtonWide}
-            extendWidth='280px'
+            extendWidth='250px'
             shrinkWidth='70px'
             height={12}
             icon={FiLogOut}
@@ -71,7 +61,7 @@ const FooterContentsWhenMenuOpen = () => {
           <ExtendableButton
             buttonText='SWITCH ACC'
             isExtend={!isLeftButtonWide}
-            extendWidth='280px'
+            extendWidth='250px'
             shrinkWidth='70px'
             height={12}
             icon={FiUser}
@@ -79,17 +69,15 @@ const FooterContentsWhenMenuOpen = () => {
           />
         </Stack>
       </Flex>
-    </>
+    </Flex>
   )
 }
 
 const FooterContentsWhenMenuClosed = () => {
   return (
     <>
-      <Flex flexFlow='row' cursor='pointer' py={4}>
-        <Center flexFlow='column' flexGrow={1}>
-          <Avatar src='' name='Chris Kasahara' size='md' />
-        </Center>
+      <Flex flexFlow='row' cursor='pointer' p={4} alignItems='center'>
+        <Avatar src='' name='Chris Kasahara' size='md' />
       </Flex>
       <Flex mb={1}>
         <Stack direction='column' spacing={2} px={4} pt={2}>

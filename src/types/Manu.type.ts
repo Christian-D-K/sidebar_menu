@@ -4,18 +4,22 @@ export type navItemType = {
   path?: string
   icon?: IconType
   name?: string
-  childMenuContents?: childMenuContentsType[]
+  SubMenuContents?: SubMenuContentsType[]
 }
 
-export type childMenuContentsType = {
+export type SubMenuContentsType = {
   id: string
   path?: string
   name?: string
   icon?: IconType | 'none'
 }
 
-export type childMenuContentsPropsType = childMenuContentsType & {
+export type SubMenuContentsPropsType = SubMenuContentsType & {
   parentId: string
 }
 
 export type menuContentsType = navItemType[]
+
+export type headerPropsType = {
+  toggleMenuOpenOrClose: () => void
+}

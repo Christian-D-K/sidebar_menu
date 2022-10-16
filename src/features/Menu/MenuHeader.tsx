@@ -1,26 +1,35 @@
 import { useAtom } from 'jotai'
-import { Text, Center, Flex, Icon, Button } from '@chakra-ui/react'
+import { Text, Flex, Icon, Button } from '@chakra-ui/react'
 import { FiMenu, FiSidebar } from 'react-icons/fi'
 import { menuOpeningStateAtom } from '../../atom/MenuAtom'
+import { headerPropsType } from '../../types/Manu.type'
 
-const MenuHeader = () => {
+const MenuHeader = ({ toggleMenuOpenOrClose }: headerPropsType) => {
   const [menuOpeningState, setMenuOpeningState] = useAtom(menuOpeningStateAtom)
-  const { mainMenuState } = menuOpeningState
+  const { mainMenuState, subMenuState } = menuOpeningState
   const { isOpen } = mainMenuState
 
   const onClick = () => {
+    toggleMenuOpenOrClose()
     setMenuOpeningState((value) => {
+      /* メインメニューを閉じる */
       mainMenuState.isOpen = !mainMenuState.isOpen
+
+      /* 開いているサブメニュー一覧の配列をクリアし、サブメニューを全て閉じる */
+      subMenuState.openSubMenuNavItemIds = isOpen
+        ? ['']
+        : subMenuState.openSubMenuNavItemIds
       return {
         ...value,
         mainMenuState,
+        subMenuState,
       }
     })
   }
 
   return (
-    <Flex h='60px' pos='relative' flexShrink={0}>
-      <Flex>
+    <Flex h='60px' pos='relative'>
+      <Flex flexGrow={1} flexShrink={0} w={isOpen ? '250px' : '100%'}>
         <Text
           ml={5}
           my={2}
@@ -28,30 +37,43 @@ const MenuHeader = () => {
           fontSize='2xl'
           fontWeight='bold'
           color='gray.200'
-          display={isOpen ? 'block' : 'none'}
         >
-          Dinosaur
+          {isOpen && 'THIS IS A HEADER'}
         </Text>
       </Flex>
       <Button
         w='50px'
         h='50px'
-        pos='absolute'
+        pos='sticky'
+        top={2}
         bg='gray.100'
-        borderLeftRadius={isOpen ? 35 : 0}
-        borderRightRadius={isOpen ? 0 : 35}
-        right={isOpen ? 0 : '-50px'}
+        p={0}
+        flexShrink={0}
         onClick={onClick}
         cursor='pointer'
+        transition={'200ms'}
+        justifyContent='flex-start'
+        _hover={{ w: '100px' }}
+        sx={
+          isOpen
+            ? {
+                borderLeftRadius: 35,
+                borderRightRadius: 0,
+                justifyContent: 'flex-start',
+              }
+            : {
+                borderLeftRadius: 0,
+                borderRightRadius: 35,
+                justifyContent: 'flex-end',
+              }
+        }
       >
-        <Center>
-          <Icon
-            w='50px'
-            h='25px'
-            strokeWidth='2px'
-            as={isOpen ? FiSidebar : FiMenu}
-          />
-        </Center>
+        <Icon
+          w='50px'
+          h='25px'
+          strokeWidth='2px'
+          as={isOpen ? FiSidebar : FiMenu}
+        />
       </Button>
     </Flex>
   )
