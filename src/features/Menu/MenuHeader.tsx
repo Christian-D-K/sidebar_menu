@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai'
 import { Text, Center, Flex, Icon, Button } from '@chakra-ui/react'
-import { FiSidebar } from 'react-icons/fi'
+import { FiMenu, FiSidebar } from 'react-icons/fi'
 import { menuOpeningStateAtom } from '../../atom/MenuAtom'
 
 const MenuHeader = () => {
@@ -45,7 +45,12 @@ const MenuHeader = () => {
         cursor='pointer'
       >
         <Center>
-          <Icon w='50px' h='25px' strokeWidth='2px' as={FiSidebar} />
+          <Icon
+            w='50px'
+            h='25px'
+            strokeWidth='2px'
+            as={isOpen ? FiSidebar : FiMenu}
+          />
         </Center>
       </Button>
     </Flex>

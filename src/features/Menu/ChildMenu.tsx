@@ -1,8 +1,7 @@
-import { Flex, ListItem, Center, Icon } from '@chakra-ui/react'
+import { Flex, ListItem } from '@chakra-ui/react'
 import { useAtom } from 'jotai'
 import { menuContentsAtom } from '../../atom/MenuAtom'
 import { childMenuContentsPropsType } from '../../types/Manu.type'
-import { FiChevronDown } from 'react-icons/fi'
 
 const ChildMenu = ({ id, parentId }: childMenuContentsPropsType) => {
   const [menuContents] = useAtom(menuContentsAtom)
@@ -13,7 +12,12 @@ const ChildMenu = ({ id, parentId }: childMenuContentsPropsType) => {
     (chlidContentsItem) => chlidContentsItem.id === id
   )
   return (
-    <Flex color='gray.600' cursor='pointer' _hover={{ bg: 'gray.700' }} pl={10}>
+    <Flex
+      color='gray.600'
+      cursor='pointer'
+      _hover={{ bg: 'gray.700', color: 'gray.200' }}
+      pl={10}
+    >
       <ListItem my={15} h={30} flexGrow={1} fontSize='lg' fontWeight='bold'>
         {childMenuItem?.name}
       </ListItem>
